@@ -84,6 +84,7 @@ ADF Statistics: 0.8153688792060511
 p- value: 0.991880243437641
 weak evidence against null hypothesis, time series has a unit root, indicating it is non-stationary 
 ## Use Techniques Differencing
+
 df_airline['Passengers First Difference']=df_airline['Thousands of Passengers']-df_airline['Thousands of Passengers'].shift(1)
 df_airline.head()
 Thousands of Passengers	Passengers First Difference
@@ -97,7 +98,9 @@ adf_test(df_airline['Passengers First Difference'].dropna())
 ADF Statistics: -2.8292668241699883
 p- value: 0.054213290283826945
 weak evidence against null hypothesis, time series has a unit root, indicating it is non-stationary 
+
 ## Use Techniques Differencing
+
 df_airline['Passengers Second Difference']=df_airline['Passengers First Difference']-df_airline['Passengers First Difference'].shift(1)
 adf_test(df_airline['Passengers Second Difference'].dropna())
 ADF Statistics: -16.384231542468527
